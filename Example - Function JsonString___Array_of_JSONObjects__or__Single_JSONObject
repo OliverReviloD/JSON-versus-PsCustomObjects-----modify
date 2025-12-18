@@ -1,0 +1,99 @@
+cls
+
+# single JSON element       
+$CLI_ReturnString1 = @"
+    { 
+        "Model": "U3419W",
+        "Index": "1",
+        "MarketingName": "",
+        "TargetFeature": "FWVERSION",
+        "Value": "M3B114"
+    }
+"@
+ 
+ # Array of JSON elements    
+ $CLI_ReturnString2 = @"
+      [  
+        { 
+          "Model": "P2422H",
+          "Index": "1",
+          "MarketingName": "",
+          "TargetFeature": "FWVERSION",
+          "Value": "M2B103"
+        }
+        ,
+        
+        {
+          "Model": "C2422HE",
+          "Index": "2",
+          "MarketingName": "",
+          "TargetFeature": "FWVERSION",
+          "Value": "M2T113"
+        }  
+      ]
+"@     
+Function JsonString___Array_of_JSONObjects__or__Single_JSONObject 
+    {
+    $CLI_ReturnString =  $CLI_ReturnString2
+    Write-Host  $CLI_ReturnString
+    
+    $CLI_ReturnStringPSObj = ($CLI_ReturnString | ConvertFrom-JSON)
+    if ( $CLI_ReturnStringPSObj -is [system.array] )
+        {
+        Write-Host "Multiple objects"
+        foreach( $Obj in $CLI_ReturnStringPSObj )
+            {
+            Write-Host $Obj 
+            # @{Model=U3419W; Index=1; MarketingName=; TargetFeature=FWVERSION; Value=M3B114}
+            }
+        }
+    else
+        {
+        Write-Host "single object"
+        Write-Host $CLI_ReturnStringPSObj
+        }
+
+    #   $CLI_ReturnStringPSObj | gm # -MemberType noteproperty
+    }        
+JsonString___Array_of_JSONObjects__or__Single_JSONObject 
+
+<#
+    $CLI_ReturnString1
+
+   { 
+        "Model": "U3419W",
+        "Index": "1",
+        "MarketingName": "",
+        "TargetFeature": "FWVERSION",
+        "Value": "M3B114"
+    }
+    single object
+    @{Model=U3419W; Index=1; MarketingName=; TargetFeature=FWVERSION; Value=M3B114}
+#>
+
+<#
+    $CLI_ReturnString2
+
+      [  
+        { 
+          "Model": "P2422H",
+          "Index": "1",
+          "MarketingName": "",
+          "TargetFeature": "FWVERSION",
+          "Value": "M2B103"
+        }
+        ,
+        
+        {
+          "Model": "C2422HE",
+          "Index": "2",
+          "MarketingName": "",
+          "TargetFeature": "FWVERSION",
+          "Value": "M2T113"
+        }  
+      ]
+ 
+    Multiple objects
+    @{Model=P2422H; Index=1; MarketingName=; TargetFeature=FWVERSION; Value=M2B103}
+    @{Model=C2422HE; Index=2; MarketingName=; TargetFeature=FWVERSION; Value=M2T113}
+#>
