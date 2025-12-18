@@ -1,0 +1,44 @@
+cls
+
+Function Array_of_PsCustomPbjects_to_JSON
+    {
+    [Array]$AllObjects = @()
+    $myObject1 = [PSCustomObject]@{  Name     = 'Kevin' ; State    = 'Texas' }
+    $AllObjects += $myObject1 
+    $myObject2 = [PSCustomObject]@{  Name     = 'John';   State    = 'Hamburg' }
+    $AllObjects += $myObject2
+    
+    Write-Output "##################"
+    $AllObjects 
+    <#
+        Name  State  
+        ----  -----  
+        Kevin Texas  
+        John  Hamburg
+    #>
+
+    Write-Output "##################"
+    [String]$AllObjectsJSONstring =  $AllObjects | ConvertTo-JSON
+    $AllObjectsJSONstring
+    <#
+    [
+        {
+            "Name":  "Kevin",
+            "State":  "Texas"
+        },
+        {
+            "Name":  "John",
+            "State":  "Hamburg"
+        }
+    ]
+    #>
+    Write-Output "##################"
+    [Array]$AllObjectsNew = @()
+    $AllObjectsNew = $AllObjectsJSONstring | ConvertFrom-JSON
+    $AllObjectsNew 
+    <#
+        Kevin Texas  
+        John  Hamburg
+    #>
+    }
+Array_of_PsCustomPbjects_to_JSON
