@@ -11,7 +11,7 @@ Example 1
       
 Example 2
 PS1 CustomObject
-<img width="146" height="90" alt="image" src="https://github.com/user-attachments/assets/6321450d-d738-43ce-9178-7ae5836f3f03" 
+<img width="146" height="90" alt="image" src="https://github.com/user-attachments/assets/6321450d-d738-43ce-9178-7ae5836f3f03" />
 
 JSON string
 <img width="297" height="198" alt="image" src="https://github.com/user-attachments/assets/735e5dfe-1285-4dab-8912-4feb5c8766e1" />
