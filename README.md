@@ -1,5 +1,6 @@
-Übersicht mit KI
-What Is JSON? Syntax, Examples + Cheat Sheet
+KI generated:
+
+What Is JSON? Syntax, Examples 
 JSON (JavaScript Object Notation) is a lightweight, human-readable, text-based format for storing and exchanging data, 
 using key-value pairs and arrays, making it easy for humans to read and computers to parse, 
 ideal for web apps and APIs to communicate data between servers and clients. Though rooted in JavaScript, 
