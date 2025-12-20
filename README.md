@@ -18,6 +18,22 @@ JSON string
 <img width="297" height="198" alt="image" src="https://github.com/user-attachments/assets/735e5dfe-1285-4dab-8912-4feb5c8766e1" />
 
       
+Example 3   
+<img width="811" height="774" alt="image" src="https://github.com/user-attachments/assets/74dddd50-0151-47cf-92a1-24a7e10de7bf" />
+
+
+Working wuth JSON strings
+1) It is possible to modify / replace substrings via any string-manipulating scripts
+
+2) Much more easy and robust
+- convert JSON to PS-CustomObject
+- modify / read / ...  PS-CustomObject properties and elements
+- reconvert PS-CustomObject back to JSON
+
+
+
+
+
    
     
 
