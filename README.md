@@ -6,7 +6,7 @@ using key-value pairs and arrays, making it easy for humans to read and computer
 ideal for web apps and APIs to communicate data between servers and clients. Though rooted in JavaScript, 
 it's language-independent, widely adopted, and simpler than alternatives like XML. 
 
-Example 1
+Example 1  
 <img width="304" height="213" alt="image" src="https://github.com/user-attachments/assets/29d9e0a1-3aa0-414f-8dc5-b80c4f76eb26" />
 
       
